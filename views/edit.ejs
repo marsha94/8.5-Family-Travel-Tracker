@@ -1,0 +1,34 @@
+<!-- edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Family Member</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/new.css"> <!-- Link to your CSS files -->
+</head>
+
+<body>
+  <h1>Edit Family Member</h1>
+  <% if (error) { %>
+  <p style="color: red;"><%= error %></p>
+  <% } %>
+  <form action="/edit/<%= user.id %>" method="post">
+    <p>Current Name: <strong><%= user.name %></strong></p>
+    <p>New Name:</p>
+    <input type="text" name="name" value="<%= user.name %>" required>
+
+    <p>Pick a new color:</p>
+    <% const colors = ['red', 'green', 'yellow', 'olive', 'orange', 'teal', 'blue', 'violet', 'purple', 'pink']; %>
+    <% colors.forEach(function(colorOption) { %>
+    <input type="radio" name="color" id="<%= colorOption %>" value="<%= colorOption %>" <%= user.color === colorOption ? 'checked' : '' %> />
+    <label for="<%= colorOption %>"><span class="<%= colorOption %>"></span></label>
+    <% }); %>
+    <div class="spacer"></div>
+    <button type="submit">Update</button>
+  </form>
+  <p><a href="/">Back to Family Management</a></p>
+</body>
+
+</html>
