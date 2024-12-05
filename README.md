@@ -4,8 +4,6 @@
 
 A full-stack web app to track and visualize visited countries. Features include user profile management, autocomplete country search, and a color-coded world map. Built with Node.js, Express, PostgreSQL, EJS, Bootstrap, and Axios for seamless data interaction and UI rendering.
 
-**Live Preview** : https://family-travel-tracker-cafo.onrender.com/
-
 ---
 
 ## Features
